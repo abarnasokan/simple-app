@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Launchpad: a small task board for testing releases across environments.">
+  <title>Launchpad · Release Night</title>
+  <link rel="stylesheet" href="/style.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <header class="topbar"><a href="/" class="brand"><span class="brand-symbol">↗</span> launchpad<span class="brand-dot">.</span></a><span class="environment" id="environment">Connecting…</span></header>
+  <main>
+    <section class="intro"><p class="eyebrow">A LITTLE MOMENTUM, EVERY DAY</p><h1 id="headline">Small tasks.<br>Confident releases.</h1><p class="lede">A simple place to plan, finish, and keep moving. Built to make your next deployment easy to see.</p></section>
+    <section class="identity" aria-label="Deployment information"><div><span>Environment</span><strong id="environment-name">—</strong></div><div><span>Release</span><strong id="version">—</strong></div><div><span>Commit</span><strong id="commit">—</strong></div><div><span>Service</span><strong id="health" role="status">Connecting</strong></div></section>
+    <p id="error" role="alert" hidden></p>
+    <section class="board" aria-labelledby="board-title"><div class="section-heading"><div><p class="eyebrow">YOUR NEXT SMALL WIN</p><h2 id="board-title">The task board</h2></div><span class="count" id="progress">0 complete</span></div>
+      <form id="task-form"><label class="sr-only" for="task-name">New task</label><input id="task-name" name="task" placeholder="What would you like to get done?" required maxlength="160" autocomplete="off" disabled><button id="add-task" disabled>Add task <span aria-hidden="true">+</span></button></form>
+      <ul id="tasks" aria-label="Tasks"></ul><p id="empty" hidden>Your board is clear. Add your next task above.</p><p class="storage-note">Tasks are saved in this browser, separately for each environment.</p>
+    </section>
+    <section class="deployment-details"><span class="status-dot"></span><p>Serving deployment <code id="deployment-id">—</code></p><a href="/api/health" target="_blank" rel="noopener">View health response ↗</a></section>
+    <p id="announcement" class="sr-only" aria-live="polite"></p>
+  </main>
+  <footer>A SMALL APP FOR BIG RELEASE MOMENTS.<a href="https://release-night-project.vercel.app" target="_blank" rel="noopener">Release Night ↗</a></footer>
+</body>
+</html>
